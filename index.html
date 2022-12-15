@@ -21,8 +21,11 @@
             >
                Neuen OpenVPN Benutzer anlegen
             </a>
-            <a href="#" class="list-group-item list-group-item-action"
-               >A second link item</a
+            <a
+               href="#"
+               id="dashboard"
+               class="list-group-item list-group-item-action"
+               >Info Dashboard</a
             >
             <a href="#" class="list-group-item list-group-item-action"
                >A third link item</a
@@ -45,6 +48,9 @@
          $(document).ready(function () {
             $("#OpenVpn").click(function () {
                window.location.href = "/OpenVPN-New-User/";
+            });
+            $("#dashboard").click(function () {
+               window.location.href = "/Info-Dashboard/";
             });
          });
       </script>
