@@ -9,6 +9,7 @@
          content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
       <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+      <script src="zeit.js"></script>
       <!-- Bootstrap CSS v5.2.1 -->
       <link
          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
       <header>
          <button
             id="goBack"
-            onclick="history.back()"
+            
             class="btn btn-success ms-5 mt-2"
          >
             Zurück
@@ -35,27 +36,28 @@
           <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
+                    <h4 class="card-title">Aktuelles Datum</h4>
+                    <p id="date" class="card-text"></p>
                 </div>
             </div>
           </div>
           <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
+                    <h4 class="card-title">Made by</h4>
+                    <b><a style="text-decoration: none;" href="https://github.com/EricU98" class="card-text">EricU98</a></b>
                 </div>
             </div>
           </div>
           <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
+                    <h4 class="card-title">Aktuelle Uhrzeit</h4>
+                    <p id="clock" class="card-text"></p>
                 </div>
             </div>
           </div>
+          
         </div>
       </div>
     </main>
@@ -81,6 +83,12 @@
                history.back();
             });
          });
+      </script>
+
+      <script>
+
+
+
       </script>
    </body>
 </html>
