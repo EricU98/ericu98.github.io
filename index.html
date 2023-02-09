@@ -27,8 +27,10 @@
                class="list-group-item list-group-item-action"
                >Info Dashboard</a
             >
-            <a href="#" class="list-group-item list-group-item-action"
-               >A third link item</a
+            <a href="#" 
+               id="itemList" 
+               class="list-group-item list-group-item-action"
+               >WebItemList</a
             >
             <a href="#" class="list-group-item list-group-item-action"
                >A fourth link item</a
@@ -51,6 +53,9 @@
             });
             $("#dashboard").click(function () {
                window.location.href = "/Info-Dashboard/";
+            });
+             $("#itemList").click(function () {
+               window.location.href = "/WebItemList/";
             });
          });
       </script>
