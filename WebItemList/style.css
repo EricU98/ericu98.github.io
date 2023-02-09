@@ -36,3 +36,20 @@
 #newItem {
    color: rgb(2, 254, 132);
 }
+
+.input-group-desktop {
+   display: flex;
+}
+.input-group-mobile {
+   display: none;
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 600px) {
+   .input-group-mobile {
+      display: flex;
+   }
+   .input-group-desktop {
+      display: none;
+   }
+}

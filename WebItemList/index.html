@@ -16,12 +16,29 @@
          href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
       />
       <link href="style.css" rel="stylesheet" />
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+      />
    </head>
    <body class="p-2">
-      <div class="alert alert-info input-group">
+      <!-- Input Group Desktop -->
+      <div class="alert alert-info input-group input-group-desktop">
          <button id="addItem" class="btn btn-secondary">Hinzufügen</button>
          <input placeholder="neuer Eintrag" id="newItem" class="form-control" />
+
          <button id="resetItem" class="btn btn-danger">Löschen</button>
+      </div>
+
+      <!-- Input Group Mobile -->
+      <div class="alert alert-info input-group input-group-mobile">
+         <button id="addItem" class="btn btn-secondary">
+            <i class="bi bi-plus-circle"></i>
+         </button>
+         <input placeholder="neuer Eintrag" id="newItem" class="form-control" />
+         <button id="resetItem" class="btn btn-danger">
+            <i class="bi bi-trash"></i>
+         </button>
       </div>
       <div>
          <div id="itemList" class="list-group"></div>
