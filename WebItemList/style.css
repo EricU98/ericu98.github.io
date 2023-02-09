@@ -8,6 +8,7 @@
    font-weight: bold;
 }
 
+/* Footer Styles - Name / Heart etc. */
 .footer {
    position: fixed;
    left: 0;
@@ -33,10 +34,12 @@
    text-shadow: 1px 1px 1px rgb(1, 1, 1);
 }
 
+/* Text-Input */
 #newItem {
    color: rgb(2, 254, 132);
 }
 
+/* Input-Group -Desktop / Mobile */
 .input-group-desktop {
    display: flex;
 }
@@ -52,4 +55,11 @@
    .input-group-desktop {
       display: none;
    }
+}
+
+/* Autocomplete Style */
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+   background: rgb(2, 254, 132) !important;
+   color: #000000 !important;
+   border-color: #000000 !important;
 }
