@@ -1,0 +1,38 @@
+.btn-remove {
+   text-decoration: none;
+   /* color: red; */
+}
+
+.btn-remove:hover {
+   /* color: red; */
+   font-weight: bold;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   /* background-color: lightgray; */
+   text-align: center;
+}
+
+#profile {
+   text-decoration: none;
+   color: var(--bs-body-color);
+   text-shadow: 1px 1px 1px rgb(0, 102, 49);
+}
+#profile:hover {
+   text-decoration: none;
+   color: greenyellow;
+   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+#heart {
+   color: rgb(255, 0, 0);
+   text-shadow: 1px 1px 1px rgb(1, 1, 1);
+}
+
+#newItem {
+   color: rgb(2, 254, 132);
+}
