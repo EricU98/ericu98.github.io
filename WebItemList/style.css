@@ -14,19 +14,26 @@
    left: 0;
    bottom: 0;
    width: 100%;
+
    /* background-color: lightgray; */
    text-align: center;
+}
+
+h4 {
+   color: var(--bs-body-color);
 }
 
 #profile {
    text-decoration: none;
    color: var(--bs-body-color);
    text-shadow: 1px 1px 1px rgb(0, 102, 49);
+   font-weight: bold;
 }
 #profile:hover {
    text-decoration: none;
    color: greenyellow;
-   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+   /* box-shadow: 0 0 10px greenyellow; */
+   text-shadow: 0 0 10px greenyellow;
 }
 
 #heart {
