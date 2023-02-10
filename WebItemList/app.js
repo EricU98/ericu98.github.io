@@ -41,11 +41,20 @@ function reload() {
 
 //TODO - Add Function to Remove single items from List
 //ANCHOR - Remove Item
+function removeItem(value) {
+   $(document).ready(function () {
+      var items = JSON.parse(localStorage.getItem("items"));
+      var index = items.indexOf(value);
+      if (index > -1) {
+         items.splice(index, 1);
+      }
+   });
+}
+
 $(document).ready(function () {
-   //Removes the item from List - <li>
-   // $("#resetItem").click(function () {
-   //    window.alert("TEST");
-   // });
+   $(".list-group-item").click(function () {
+      console.log("AAAAA");
+   });
 });
 
 $(document).ready(function () {
@@ -120,3 +129,43 @@ function showErrorMessage(errorCode) {
       console.log(errorMessage);
    });
 }
+
+$(document).ready(function () {
+   // $("#btn-dark").click(function () {
+   //    $("#btn-dark").fadeTo(500, 0, function () {
+   //       $("#btn-light").fadeTo(500, 0);
+   //    });
+   // });
+
+   $("#btn-light").click(function () {
+      $("btn-light").fadeTo(500, 0, function () {
+         $("#btn-dark").fadeTo(500, 0);
+      });
+   });
+});
+
+//ANCHOR - Save List in locale Storage
+$(document).ready(function () {
+   $("#btn-save-list").click(function () {
+      var listName = $("#input-list-name").val();
+      if (listName != "") {
+         items = [];
+         var listen = JSON.parse(localStorage.getItem("listen"));
+         if (!listen) {
+            listen = [];
+            localStorage.setItem("listen", JSON.stringify(listen));
+         }
+         var items = JSON.parse(localStorage.getItem("items"));
+         localStorage.setItem(listName, JSON.stringify(items));
+         localStorage.setItem("currentList", listName);
+
+         console.log(
+            "Liste mit dem Namen '" + listName + "' erfolgreich gespeichert"
+         );
+
+         $("#input-list-name").val("");
+      } else {
+         console.log("Der Name der Liste darf nicht leer sein!");
+      }
+   });
+});

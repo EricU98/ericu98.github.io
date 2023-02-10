@@ -70,3 +70,20 @@ h4 {
    color: #000000 !important;
    border-color: #000000 !important;
 }
+
+.btn-dark {
+   text-decoration: none;
+   color: white;
+}
+.btn-dark:hover {
+   text-shadow: 0px 0px 15px white;
+}
+
+.btn-light {
+   text-decoration: none;
+   color: yellow;
+}
+
+.btn-light:hover {
+   text-shadow: 0px 0px 15px yellow;
+}
