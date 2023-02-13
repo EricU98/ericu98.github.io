@@ -2,11 +2,11 @@
    "errorMessages": [
       {
          "errorCode": "1001",
-         "errorMessage": "Das Inputfeld darf nicht leer sein!"
+         "errorMessage": "Input darf nicht leer sein!"
       },
       {
          "errorCode": "1002",
-         "errorMessage": "Gegenstand existiert bereits in der Liste!"
+         "errorMessage": "Eintrag existiert bereits in der Liste!"
       },
       {
          "errorCode": "1003",
