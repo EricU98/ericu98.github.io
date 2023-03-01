@@ -87,6 +87,7 @@ function renderItemList() {
          //const $listItem = $("<li>").append($link);
          $itemListElement.append($link);
       });
+      document.title = activeList;
    }
    // Get a reference to the #itemList element in the DOM
 }
@@ -129,6 +130,7 @@ $(document).ready(function () {
       var text = $(inputId).val();
       if (text != "") {
          addItem(text, "", true);
+         $(inputId).val("");
       } else {
          showErrorMessage("1001");
       }
@@ -167,6 +169,8 @@ $(document).ready(function () {
          const list = JSON.parse(localStorage.getItem("lists"));
          list.push($text);
          localStorage.setItem("lists", JSON.stringify(list));
+         $("#input-newList").val("");
+         document.title = $text;
       }
    });
 });
