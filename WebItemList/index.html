@@ -26,9 +26,8 @@
    <body class="p-2">
       <!-- Input Group Desktop -->
       <div class="alert alert-info input-group input-group-desktop">
-         <button id="addItem-desktop" class="btn btn-secondary addItem">
-            Hinzufügen
-         </button>
+         <button id="resetItem-desktop" class="btn btn-danger">Löschen</button>
+
          <!-- <button
             title="Speichern"
             data-bs-toggle="modal"
@@ -38,9 +37,11 @@
             <i class="bi bi-save"></i>
          </button> -->
 
-         <!-- data-bs-toggle="modal"
-            data-bs-target="#save-list-dialog" -->
-
+         <input
+            placeholder="neuer Eintrag"
+            id="newItem-desktop"
+            class="form-control input-item"
+         />
          <button
             id="btn-settings-desktop"
             title="Settings"
@@ -48,14 +49,9 @@
          >
             <i class="bi bi-gear"></i>
          </button>
-
-         <input
-            placeholder="neuer Eintrag"
-            id="newItem-desktop"
-            class="form-control input-item"
-         />
-
-         <button id="resetItem-desktop" class="btn btn-danger">Löschen</button>
+         <button id="addItem-desktop" class="btn btn-success addItem">
+            Hinzufügen
+         </button>
       </div>
 
       <!-- Settings Desktop -->
@@ -68,13 +64,21 @@
             <div class="input-group">
                <div class="btn-group w-100" role="group">
                   <button
-                     id="btn-download"
+                     id="-btn-download"
+                     data-bs-target="#download-dialog"
+                     data-bs-toggle="modal"
                      title="Download Liste als Json"
                      class="btn btn-success"
                   >
                      Download <i class="bi bi-download"></i>
                   </button>
-                  <button type="button" class="btn btn-warning">
+                  <button
+                     title="Speichern"
+                     data-bs-toggle="modal"
+                     data-bs-target="#save-list-dialog"
+                     type="button"
+                     class="btn btn-warning"
+                  >
                      Liste Speichern
                   </button>
                   <button
@@ -96,19 +100,20 @@
 
       <!-- Input Group Mobile -->
       <div class="alert alert-info input-group input-group-mobile">
-         <button id="addItem-mobile" class="btn btn-secondary addItem">
-            <i class="bi bi-plus-circle bi-mobile"></i>
+         <button id="resetItem-mobile" class="btn btn-danger">
+            <i class="bi bi-trash bi-mobile"></i>
          </button>
-         <button id="btn-settings-mobile" class="btn btn-warning">
-            <i class="bi bi-gear bi-mobile"></i>
-         </button>
+
          <input
             placeholder="neuer Eintrag"
             id="newItem-mobile"
             class="form-control input-item"
          />
-         <button id="resetItem-mobile" class="btn btn-danger">
-            <i class="bi bi-trash bi-mobile"></i>
+         <button id="btn-settings-mobile" class="btn btn-warning">
+            <i class="bi bi-gear bi-mobile"></i>
+         </button>
+         <button id="addItem-mobile" class="btn btn-success addItem">
+            <i class="bi bi-plus-circle bi-mobile"></i>
          </button>
       </div>
 
@@ -121,7 +126,14 @@
             <button title="Upload" type="button" class="btn btn-dark">
                <i class="bi bi-upload bi-mobile"></i>
             </button>
-            <button title="Speichern" type="button" class="btn btn-success">
+            <button
+               title="Speichern"
+               data-bs-toggle="modal"
+               data-bs-target="#save-list-dialog"
+               title="Speichern"
+               type="button"
+               class="btn btn-success"
+            >
                <i class="bi bi-save bi-mobile"></i>
             </button>
          </div>
@@ -138,7 +150,7 @@
          <div id="itemList" class="list-group"></div>
       </div>
 
-      <!-- Modal -->
+      <!-- Modal - Save List-->
       <div
          class="modal fade"
          id="save-list-dialog"
@@ -206,6 +218,105 @@
          </div>
       </div>
 
+      <!-- Modal - Download List as .json -->
+      <!-- Modal -->
+      <div
+         class="modal fade"
+         id="download-dialog"
+         tabindex="-1"
+         aria-labelledby="download-dialog-label"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="download-dialog-label">
+                     Modal title
+                  </h1>
+                  <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                  ></button>
+               </div>
+               <div class="modal-body">
+                  <select
+                     class="form-select"
+                     id="list-select"
+                     aria-label="Default select example"
+                  >
+                     <option disabled selected>Open this select menu</option>
+                     <option value="currentList">aktuelle Liste</option>
+                  </select>
+               </div>
+               <div class="modal-footer">
+                  <button
+                     type="button"
+                     class="btn btn-secondary"
+                     data-bs-dismiss="modal"
+                  >
+                     Schließen
+                  </button>
+                  <button type="button" class="btn btn-success">
+                     Download
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ANCHOR - Inital Dialog - create new List -->
+      <!-- Modal -->
+      <div
+         class="modal fade"
+         id="modal-createList"
+         data-bs-backdrop="static"
+         data-bs-keyboard="false"
+         tabindex="-1"
+         aria-labelledby="staticBackdropLabel"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                     Erstelle eine neue Liste
+                  </h1>
+                  <!-- <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                  ></button> -->
+               </div>
+               <div class="modal-body">
+                  <input
+                     placeholder="neue Liste"
+                     id="input-newList"
+                     class="form-control input-item"
+                  />
+               </div>
+               <div class="modal-footer text-center">
+                  <!-- <button
+                     type="button"
+                     class="btn btn-secondary"
+                     data-bs-dismiss="modal"
+                  >
+                     Close
+                  </button> -->
+                  <button
+                     id="btn-modal-newList"
+                     type="button"
+                     class="btn btn-success"
+                  >
+                     Erstellen
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <!-- ANCHOR Scripts -->
       <!-- Bootstrap -->
       <script
@@ -221,7 +332,10 @@
       ></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
       <!-- Custom Javascript -->
-      <script src="app.js"></script>
+
+      <!-- app.js removed for testing -->
+      <!-- <script src="app.js"></script> -->
+      <script src="add.js"></script>
    </body>
 
    <footer class="footer">
