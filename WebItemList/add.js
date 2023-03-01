@@ -68,26 +68,27 @@ function renderItemList() {
    // Retrieve the itemList from local storage
    const itemListJson = localStorage.getItem(activeList);
    const itemList = JSON.parse(itemListJson);
+   if (itemList) {
+      const $itemListElement = $("#itemList");
 
+      // Clear any existing items from the #itemList element
+      $itemListElement.empty();
+
+      // Loop through each item in the itemList and append a link to the #itemList element
+      itemList.itemList.forEach((item) => {
+         const $link = $(
+            "<a id='" +
+               item.name +
+               "' class='list-group-item list-group-item-action list-group-item-info'>" +
+               item.name +
+               "</a>",
+            {}
+         );
+         //const $listItem = $("<li>").append($link);
+         $itemListElement.append($link);
+      });
+   }
    // Get a reference to the #itemList element in the DOM
-   const $itemListElement = $("#itemList");
-
-   // Clear any existing items from the #itemList element
-   $itemListElement.empty();
-
-   // Loop through each item in the itemList and append a link to the #itemList element
-   itemList.itemList.forEach((item) => {
-      const $link = $(
-         "<a id='" +
-            item.name +
-            "' class='list-group-item list-group-item-action list-group-item-info'>" +
-            item.name +
-            "</a>",
-         {}
-      );
-      //const $listItem = $("<li>").append($link);
-      $itemListElement.append($link);
-   });
 }
 
 //ANCHOR - List item remover
